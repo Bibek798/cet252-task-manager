@@ -1,3 +1,4 @@
+// TestCafe functional tests for Task Manager
 import { Selector } from 'testcafe';
 
 fixture('Task Manager Test')
