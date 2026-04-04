@@ -1,4 +1,5 @@
 // TestCafe functional tests for Task Manager
+
 import { Selector } from 'testcafe';
 
 fixture('Task Manager Test')
@@ -28,3 +29,11 @@ test('Refresh button reloads tasks', async t => {
         .click(refreshBtn)
         .expect(tasks.count).gt(0);
 });
+test('Add task button opens form', async t => {
+    const addBtn = Selector('button').withText('Add Task');
+    const form = Selector('#formContainer');
+
+    await t
+        .click(addBtn)
+        .expect(form.visible).ok();
+}); 
